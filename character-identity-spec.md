@@ -85,10 +85,10 @@
 当需要生成「Pixel 换武器版本」时：
 
 ```
-Step 1: 读取本规范（Pixel Identity Spec）
+Step 1: 读取本规范
 Step 2: 取参考图 input_files: ["/workspace/user_input_files/d4ccd682b7b3f6444e7fa3c633363cca.jpg"]
-Step 3: 只修改武器描述（Weapon 字段），其余完全照搬
-Step 4: prompt 模板基于本规范的完整描述 + 换用武器
+Step 3: 只修改武器描述，其余完全照搬
+Step 4: prompt 基于 Stanford 格式两段式模板
 ```
 
 ### 武器替换示例
@@ -99,20 +99,74 @@ Step 4: prompt 模板基于本规范的完整描述 + 换用武器
 
 ---
 
+## 🔥 标准 Prompt 模板（Stanford 格式）
+
+> 来源：Vincent 提供的结构化提示词，确保角色一致性。
+
+### 两段式结构
+
+```
+[不可变锚点 — 锁定风格/比例/表情，每次生成必须包含]
+Classic JRPG HD Pixel Art Character, Inspired by Octopath Traveler.
+Proportions: Classic JRPG heroic proportions (3.5 to 4 head heights).
+Style Details: Extremely detailed pixel-level texture. Crisp edge outlines.
+Rendering style must match the exact pixel grid fidelity of image_0.png.
+Face & Expression (CRITICAL): Serious, focused, stern expression, as in image_0.png.
+Background: Transparent (checkerboard pattern).
+
+[可变细节参数 — 用户自定义部分]
+Character Class: [职业]
+Hair Style & Color: [发型+发色]
+Eye Color: [瞳色]
+Armor Style & Metal Color: [盔甲样式+主色]
+Armor Accents GLOWING: [发光装饰颜色]
+Weapon/Item (Right Hand): [右手武器]
+Weapon/Item (Left Hand): [左手道具]
+Specific Pose/Action: [具体姿态]
+```
+
+### Pixel 原型固定不可变部分
+
+```
+Classic JRPG HD Pixel Art Character, Inspired by Octopath Traveler.
+Proportions: Classic JRPG heroic proportions (3.5 to 4 head heights).
+Style Details: Extremely detailed pixel-level texture. Crisp edge outlines.
+Rendering style must match the exact pixel grid fidelity of image_0.png.
+Face & Expression (CRITICAL): Serious, focused, stern expression, as in image_0.png.
+Background: Transparent (checkerboard pattern).
+```
+
+### 可变参数示例（Pixel 换火杖版）
+
+```
+Character Class: Fire Mage Knight.
+Hair: Same slate grey medium-length slightly messy from image_0.png.
+Eyes: Same deep coffee brown from image_0.png.
+Armor: Same detailed silver-blue plate armor from image_0.png.
+Armor Accents GLOWING: Change cyan-blue panels to deep orange-red flame patterns.
+Cloak: Same deep indigo purple flowing cloak from image_0.png.
+Weapon Right Hand: Change ice blade to ornate fire staff with blazing flame crystal orb.
+Weapon Left Hand: Keep glowing rune tablet from image_0.png.
+Pose: Full frontal standing combat ready with fire magic gathering.
+```
+
+---
+
 ## ✅ 已验证成功案例
 
-### 冰杖版走路循环（2026-04-06）
-- **目录**：`/workspace/ice-staff-test/`
-- **帧**：F1 站立 → F2 迈步 → F3 跨步 → F4 过渡
-- **武器**：冰杖（Ice Crystal Staff with frost orb crown）
-- **验证结果**：✅ 4帧一致性良好，比例正确，颜色准确
-- **参考帧**：`f1_stand_ice.png`（已作为后续锚点验证）
+| 日期 | 角色 | 武器 | 结果 | 路径 |
+|---|---|---|---|---|
+| 2026-04-06 | Pixel | 冰剑 | ✅ Vincent OK | `d4ccd682b7b3f6444e7fa3c633363cca.jpg` |
+| 2026-04-06 | Pixel | 冰杖（4帧走路） | ✅ 帧间一致 | `/workspace/ice-staff-test/f1_stand_ice.png` |
 
-### 原版冰剑站立（2026-04-06）
-- **目录**：`/workspace/user_input_files/`
-- **参考图**：`d4ccd682b7b3f6444e7fa3c633363cca.jpg`
-- **武器**：浅冰蓝晶体阔刃 + 白色十字星芒
-- **验证结果**：✅ Vincent 确认 OK，比例 3.5 头身，标志性绿松石菱形宝石
+### 冰杖版 4 帧走路循环规范
+
+```
+帧1（F1）：站立 idle — 右脚在前、重心居中
+帧2（F2）：迈步 step — 右腿前伸、膝盖微弯
+帧3（F3）：跨步 stride — 双腿最大跨幅、身体前倾
+帧4（F4）：过渡 pass — 右腿过左腿、身体重心转移
+```
 
 ---
 
@@ -124,16 +178,7 @@ Step 4: prompt 模板基于本规范的完整描述 + 换用武器
 - `pixel_ice_sword_01` — Pixel 原版（冰剑）
 - `pixel_ice_staff_01` — Pixel 冰杖版 ✅已验证
 - `pixel_fire_staff_01` — Pixel 火杖版（待生成）
-- `fire_mage_01` — 独立火法师角色
-
----
-
-*最后更新：2026-04-06 by Pixel Agent*
-
-示例：
-- `fire_mage_01` — 火属性女法师第一版
-- `ice_mage_01` — 冰属性角色第一版
-- `light_warrior_01` — 光属性战士
+- `fire_mage_01` — 独立火法师
 
 ---
 
