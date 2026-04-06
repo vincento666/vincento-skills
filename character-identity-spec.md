@@ -201,4 +201,40 @@ Pose: Full frontal standing combat ready with fire magic gathering in raised han
 
 ---
 
+---
+
+## 🔥 Pixel 火法师已确认版（参考）
+
+**参考图**：`/workspace/user_input_files/fire_mage_free_ref.jpg`
+
+### 固定视觉特征
+
+| 部位 | 规范 |
+|---|---|
+| **发型** | 极长火红色波浪卷发 + 齐刘海 + 两侧长鬓角 |
+| **眼睛** | 琥珀色 Amber，带火光神采 |
+| **配色** | 红 + 黑/深褐 + 金三色为主 |
+| **肩甲** | 金色羽翼状/火焰状肩甲，放射状金属片 |
+| **服装** | 修身法师袍，胸口V形金纹，腰部几何图案，立领红宝石 |
+| **法杖** | 金柄 + 巨大半透明橙色宝珠 + 顶部巨型火焰特效 |
+| **披风** | 深蓝紫色 Midnight Blue，下摆破碎撕裂，向后飘扬 |
+| **特效** | 身侧悬浮4个独立火球 + 左手聚火球 |
+| **气质** | 高冷、尊贵、冷静、自信 |
+
+### 已确认火法师 Prompt 关键词
+
+```
+Female Fire Mage, pixel art style,
+long fiery red wavy hair with bangs,
+amber eyes,
+wearing crimson and black mage robes with intricate gold embroidery,
+large golden wing-shaped pauldrons,
+holding a golden staff with a glowing orange orb and massive flames,
+tattered dark blue cape flowing in the wind,
+floating fireballs around her,
+HD-2D Octopath Traveler style, black outlines, transparent background
+```
+
+---
+
 *最后更新：2026-04-06 by Pixel Agent*
