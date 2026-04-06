@@ -134,21 +134,40 @@ Style Details: Extremely detailed pixel-level texture. Crisp edge outlines.
 Rendering style must match the exact pixel grid fidelity of image_0.png.
 Face & Expression (CRITICAL): Serious, focused, stern expression, as in image_0.png.
 Background: Transparent (checkerboard pattern).
+
+[所有需要一致性的元素，直接写 "as in image_0.png" 即可]
+```
+
+**一致性规则（每个角色只需描述一次）：**
+```
+Hair:           Same as image_0.png
+Eyes:           Same as image_0.png
+Face/Expression: Same as image_0.png
+Armor Style:     Same as image_0.png
+Armor Color:     Same as image_0.png
+Cloak:           Same as image_0.png
+Body Proportions: Same as image_0.png
 ```
 
 ### 可变参数示例（Pixel 换火杖版）
 
+所有一致性元素全部引用 image_0.png，**只需描述变化的部分**：
+
 ```
 Character Class: Fire Mage Knight.
-Hair: Same slate grey medium-length slightly messy from image_0.png.
-Eyes: Same deep coffee brown from image_0.png.
-Armor: Same detailed silver-blue plate armor from image_0.png.
-Armor Accents GLOWING: Change cyan-blue panels to deep orange-red flame patterns.
-Cloak: Same deep indigo purple flowing cloak from image_0.png.
-Weapon Right Hand: Change ice blade to ornate fire staff with blazing flame crystal orb.
-Weapon Left Hand: Keep glowing rune tablet from image_0.png.
-Pose: Full frontal standing combat ready with fire magic gathering.
+Hair:           Same as image_0.png.
+Eyes:           Same as image_0.png.
+Face/Expression: Same as image_0.png.
+Body Proportions: Same as image_0.png.
+Armor Style:    Same as image_0.png.
+Armor Accents GLOWING: Deep orange-red flame runes (change from cyan to fire color).
+Cloak:          Same as image_0.png.
+Weapon Right Hand: Ornate fire staff with blazing flame crystal orb (swap ice blade for this).
+Weapon Left Hand: Same glowing rune tablet as image_0.png.
+Pose: Full frontal standing combat ready with fire magic gathering in raised hand.
 ```
+
+这样每个新角色/新变体的 prompt 都**极短**，只描述必要的变化。
 
 ---
 
