@@ -1,0 +1,113 @@
+# Pixel 角色身份规范 / Character Identity Spec
+
+> 每次生成 Pixel 系列角色时，必须严格遵循本规范。
+> 参考图：`/workspace/user_input_files/d4ccd682b7b3f6444e7fa3c633363cca.jpg`
+
+---
+
+## 🎭 Pixel 原型（Ice Mage Knight）
+
+**角色名**：Pixel
+**职业**：魔导骑士 / Ice Mage Knight
+**比例**：3.5 头身（3.5 head tall）
+**风格**：HD-2D Octopath Traveler，16-bit 经典 JRPG
+
+---
+
+### 精确视觉规范
+
+#### 头发
+- **颜色**：板岩灰 Slate Grey（主色）
+- **阴影**：深炭灰 Charcoal Grey
+- **高光**：浅鸽灰 Light Pigeon Grey
+- **形状**：中短发，碎发状刘海左右分开，发丝线条硬朗
+
+#### 眼睛
+- **颜色**：深咖啡色 Deep Coffee（接近黑色）
+- **形状**：2层高度横向矩形像素
+- **神情**：坚定、严肃、战斗专注
+
+#### 盔甲
+- **主色**：银蓝色金属 Silver-blue Metal
+- **亮部**：浅钢青 Light Steel Blue
+- **阴影**：中灰蓝 Medium Grey Blue
+- **勾边**：深蓝黑 Deep Blue Black
+- **纹路**：全身布满荧光青色 Fluorescent Cyan 发光电路纹
+- **肩甲**：圆弧形多层构造，边沿有青色光点
+- **胸甲**：左右对称，中心有纵向青色发光槽
+- **腿甲/战裙**：同样有青色垂直线条
+
+#### 宝石（关键！）
+- **颜色**：绿松石色 Turquoise → 薄荷青 Mint Cyan 渐变
+- **形状**：纵向菱形 Lozenge（不是圆形，不是方形）
+- **位置1**：胸甲正中心（主要视觉焦点）
+- **位置2**：腰带中心/护裆位置
+- **特效**：向外散发青蓝色微光
+
+#### 披风
+- **外色**：靛紫色 Indigo Purple
+- **暗部**：暗紫色 Dark Violet
+- **边缘**：丁香紫 Lilac（受光处）
+- **长度**：拖地长披风
+- **形状**：宽大流线型，随风向后飘动，底部参差不齐
+
+#### 武器（右手）
+- **形态**：短晶体阔刃 / Ice Crystal Blade
+- **颜色**：半透明亮白 + 浅冰蓝 Ice Blue
+- **特效**：十字形白色星芒 + 天蓝色 Sky Blue 散落粒子
+
+#### 左手道具
+- **形态**：矩形符文石板 Rune Tablet
+- **颜色**：灰蓝色 Greyish Blue 板面
+- **细节**：布满不规则青色 Cyan 闪烁像素点
+
+#### 身体比例（关键！禁止偏离）
+- **头身比**：3.5 头身
+- 头大、肩宽（含夸张肩甲）、腿短、甲胄厚重
+- 底盘稳——这是 Pixel 的标志性比例
+
+---
+
+## ✅ 错误描述修正
+
+| 我之前写的（错） | 正确描述 |
+|---|---|
+| 祖母绿宝石 emerald green | 绿松石色/薄荷青 turquoise/mint cyan，菱形 lozenge |
+| 银色盔甲 silver armor | 银蓝色金属 silver-blue metal |
+| 紫色披风 purple | 靛紫色 indigo purple |
+| 2.5-3 头身 | **3.5 头身**（正确） |
+| 冰蓝光刃 ice-blue | 浅冰蓝 + 白色十字星芒 |
+
+---
+
+## ⚔️ 武器替换工作流
+
+当需要生成「Pixel 换武器版本」时：
+
+```
+Step 1: 读取本规范（Pixel Identity Spec）
+Step 2: 取参考图 input_files: ["/workspace/user_input_files/d4ccd682b7b3f6444e7fa3c633363cca.jpg"]
+Step 3: 只修改武器描述（Weapon 字段），其余完全照搬
+Step 4: prompt 模板基于本规范的完整描述 + 换用武器
+```
+
+### 武器替换示例
+
+**原版（冰剑）**：`right hand holding glowing ice-blue crystal short sword with white cross sparkle`
+**换冰杖**：`right hand holding glowing ice-blue crystal staff with frost orb crown top, frost rune carvings`
+**换火杖**：`right hand holding ornate fire staff with blazing flame crystal at top`
+
+---
+
+## 📁 其他角色命名规范
+
+新角色命名格式：`{元素属性}{职业}{序号}`
+
+示例：
+- `fire_mage_01` — 火属性女法师第一版
+- `ice_mage_01` — 冰属性角色第一版
+- `light_warrior_01` — 光属性战士
+
+---
+
+*最后更新：2026-04-06 by Pixel Agent*
